@@ -1,0 +1,31 @@
+
+> kiran-public-school-dashboard@1.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.30
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.5s
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 10.1s (597 modules)
+ GET /contact 200 in 10578ms
+ GET /contact 200 in 10581ms
+ GET /_next/static/webpack/42678a6687b8620e.webpack.hot-update.json 404 in 10635ms
+ GET /_next/static/webpack/42678a6687b8620e.webpack.hot-update.json 404 in 10627ms
+ GET /contact 200 in 196ms
+ GET /contact 200 in 203ms
+ ○ Compiling / ...
+ ✓ Compiled / in 637ms (612 modules)
+ GET /contact 200 in 804ms
+ GET / 200 in 839ms
+ GET /contact 200 in 55ms
+ ✓ Compiled in 718ms (595 modules)
+ GET /contact 200 in 133ms
+ ✓ Compiled in 672ms (595 modules)
+ ✓ Compiled in 360ms (298 modules)
+ ✓ Compiled in 516ms (595 modules)
+   Reload env: .env.local
+ ✓ Compiled in 2.3s (595 modules)
+ ✓ Compiled in 661ms (595 modules)
+ GET /contact 200 in 262ms
