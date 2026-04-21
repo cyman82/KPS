@@ -6,7 +6,7 @@ export const schoolInfo = {
   phones: ["95843 33381", "90399 02810"],
   email: "kiranpublicsc@gmail.com",
   enquiryEmail: "kiranpublicsc@gmail.com",
-  domain: "kiranpublicschool.com"
+  domain: "kiranpublicschool.co.in"
 };
 
 export const dashboardLinks = [
