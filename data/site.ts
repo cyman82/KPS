@@ -4,8 +4,8 @@ export const schoolInfo = {
   medium: "English Medium (Pre-Nursery to 12th)",
   address: "34, Vrindavan Colony Main Road, Indore, Madhya Pradesh 452015",
   phones: ["95843 33381", "90399 02810"],
-  email: "ankitjaiswal.1025@gmail.com",
-  enquiryEmail: "bhadouriyariyansh82@gmail.com",
+  email: "kiranpublicsc@gmail.com",
+  enquiryEmail: "kiranpublicsc@gmail.com",
   domain: "kiranpublicschool.com"
 };
 
