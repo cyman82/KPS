@@ -14,12 +14,12 @@ export function SiteNav() {
 
   return (
     <nav aria-label="Main navigation" className="w-full">
-      <ul className="flex flex-wrap items-center justify-center gap-3 text-sm font-semibold uppercase tracking-[0.24em] text-school.gray">
-        {navItems.map((item) => (
-          <li key={item.href}>
+      <ul className="grid grid-cols-2 gap-3 text-center text-xs font-semibold uppercase tracking-[0.16em] text-school.gray sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:text-sm sm:tracking-[0.24em]">
+        {navItems.map((item, index) => (
+          <li key={item.href} className={index === 2 ? "col-span-2 sm:col-span-1" : ""}>
             <Link
               href={item.href}
-              className={`rounded-full border px-4 py-2 transition duration-300 hover:-translate-y-0.5 ${
+              className={`inline-flex w-full items-center justify-center rounded-full border px-5 py-2.5 transition duration-300 hover:-translate-y-0.5 sm:w-auto sm:px-8 ${
                 pathname === item.href
                   ? "border-school.red bg-school.red/5 text-school.red shadow-soft"
                   : "border-school.saffron/40 bg-white text-school.gray hover:border-school.red hover:text-school.red"

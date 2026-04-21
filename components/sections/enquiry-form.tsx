@@ -146,8 +146,13 @@ export function EnquiryForm() {
         <h2 className="font-serif text-3xl font-semibold text-school.charcoal sm:text-4xl">
           Send a School Enquiry
         </h2>
-        <p className="text-sm leading-7 text-school.gray whitespace-nowrap sm:text-base">
-          All enquiries are sent directly to {schoolInfo.enquiryEmail}. Parents can submit questions here and the message will be delivered to the school inbox.
+        <p className="text-sm leading-7 text-school.gray sm:text-base">
+          <span className="block">
+            All enquiries are sent directly to {schoolInfo.enquiryEmail}.
+          </span>
+          <span className="block">
+            Parents can submit questions here and the message will be delivered to the school inbox.
+          </span>
         </p>
       </div>
 
