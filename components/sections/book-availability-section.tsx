@@ -16,7 +16,7 @@ export function BookAvailabilitySection() {
         </p>
       </div>
 
-      <div className="mt-6 grid gap-5 md:grid-cols-2">
+      <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {bookAvailabilityShops.map((shop) => (
           <article
             key={shop.name}

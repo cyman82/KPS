@@ -18,9 +18,10 @@ export function SchoolMomentsSlideshow({ mediaItems }: SchoolMomentsSlideshowPro
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
+  const activeItem = mediaItems[activeIndex];
 
   useEffect(() => {
-    if (mediaItems.length <= 1) {
+    if (mediaItems.length <= 1 || activeItem?.type === "video") {
       return;
     }
 
@@ -29,7 +30,7 @@ export function SchoolMomentsSlideshow({ mediaItems }: SchoolMomentsSlideshowPro
     }, 4000);
 
     return () => window.clearInterval(interval);
-  }, [mediaItems.length]);
+  }, [activeItem?.type, mediaItems.length]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -58,9 +59,11 @@ export function SchoolMomentsSlideshow({ mediaItems }: SchoolMomentsSlideshowPro
       }
 
       if (index === activeIndex) {
+        videoRef.currentTime = 0;
         videoRef.play().catch(() => undefined);
       } else {
         videoRef.pause();
+        videoRef.currentTime = 0;
       }
     });
   }, [activeIndex]);
@@ -89,7 +92,7 @@ export function SchoolMomentsSlideshow({ mediaItems }: SchoolMomentsSlideshowPro
       }`}
     >
       <div className="group relative mx-auto w-full max-w-5xl overflow-hidden rounded-[2rem] border border-school.saffron/20 bg-white shadow-panel transition duration-500 hover:-translate-y-1 hover:shadow-premium">
-        <div className="relative h-[22rem] w-full sm:h-[28rem] lg:h-[34rem]">
+        <div className="relative h-[58vh] min-h-[18rem] w-full max-h-[46rem] bg-school.charcoal/95 sm:min-h-[24rem]">
           {mediaItems.map((item, index) => {
             const isActive = index === activeIndex;
             return (
@@ -106,7 +109,7 @@ export function SchoolMomentsSlideshow({ mediaItems }: SchoolMomentsSlideshowPro
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1200px) 90vw, 1100px"
                     priority={isActive}
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-contain object-center"
                   />
                 ) : (
                   <video
@@ -115,11 +118,11 @@ export function SchoolMomentsSlideshow({ mediaItems }: SchoolMomentsSlideshowPro
                     }}
                     src={item.src}
                     muted
-                    loop
                     playsInline
                     autoPlay
                     preload="metadata"
-                    className="h-full w-full object-cover object-center"
+                    onEnded={goNext}
+                    className="h-full w-full object-contain object-center"
                   />
                 )}
               </div>

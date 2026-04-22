@@ -12,6 +12,12 @@ export function SiteHeader() {
               {schoolInfo.recognition}
             </p>
             <p className="font-medium text-school.gray">{schoolInfo.address}</p>
+            <p className="text-sm font-medium text-school.gray">
+              Reg. No. {schoolInfo.registrationNumber}
+            </p>
+            <p className="text-sm font-medium text-school.gray">
+              DISE Code : {schoolInfo.diseCode}
+            </p>
           </div>
 
           <div className="flex flex-col items-center gap-3 text-center">

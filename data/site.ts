@@ -3,6 +3,8 @@ export const schoolInfo = {
   recognition: "Recognised by M.P. Government",
   medium: "English Medium (Pre-Nursery to 12th)",
   address: "34, Vrindavan Colony Main Road, Indore, Madhya Pradesh 452015",
+  registrationNumber: "03/27/03/1110/08",
+  diseCode: "23260102021",
   phones: ["95843 33381", "90399 02810"],
   email: "kiranpublicsc@gmail.com",
   enquiryEmail: "kiranpublicsc@gmail.com",
@@ -46,5 +48,10 @@ export const bookAvailabilityShops = [
     name: "Amayra Books and Stationaries",
     address: "36 Vrindavan Colony, Below Soundrya Beauty Parlour, Indore",
     phone: "7389700186"
+  },
+  {
+    name: "Doll & Doll General Store & Stationaries",
+    address: "1/3, Satya Sai Bagh Colony, Indore",
+    phone: "+91 95895 34493"
   }
 ];
