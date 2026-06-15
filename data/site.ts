@@ -2,7 +2,7 @@ export const schoolInfo = {
   name: "Kiran Public School",
   recognition: "Recognised by M.P. Government",
   medium: "English Medium (Pre-Nursery to 12th)",
-  address: "34, Vrindavan Colony Main Road, Indore, Madhya Pradesh 452015",
+  address: "34, Vrindavan Square Main Road, Indore, Madhya Pradesh 452015",
   registrationNumber: "03/27/03/1110/08",
   diseCode: "23260102021",
   phones: ["95843 33381", "90399 02810"],
