@@ -16,6 +16,11 @@ export const dashboardLinks = [
     title: "Book List",
     href: "/book-list",
     description: "Class-wise books with search and publisher filters."
+  },
+  {
+    title: "Uniforms",
+    href: "/uniforms",
+    description: "Uniform photos for parents to view before purchasing."
   }
 ];
 

@@ -1,0 +1,72 @@
+import { readdir } from "fs/promises";
+import path from "path";
+import Image from "next/image";
+
+const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"]);
+
+async function getUniformImages() {
+  const uniformsDir = path.join(process.cwd(), "media", "Uniforms");
+
+  try {
+    const files = await readdir(uniformsDir);
+
+    return files
+      .filter((fileName) => imageExtensions.has(path.extname(fileName).toLowerCase()))
+      .sort((a, b) => a.localeCompare(b))
+      .map((fileName, index) => ({
+        src: `/media/Uniforms/${encodeURIComponent(fileName)}`,
+        alt: fileName.replace(path.extname(fileName), "").replace(/[-_]/g, " "),
+        label: `Uniform ${index + 1}`
+      }));
+  } catch {
+    return [];
+  }
+}
+
+export async function UniformGallery() {
+  const uniformImages = await getUniformImages();
+
+  if (uniformImages.length === 0) {
+    return (
+      <section className="rounded-[2rem] border border-school.saffron/20 bg-white px-6 py-10 text-center shadow-panel sm:px-8">
+        <p className="text-sm leading-7 text-school.gray">
+          Uniform photos will appear here once images are added to the uniforms folder.
+        </p>
+      </section>
+    );
+  }
+
+  return (
+    <section className="space-y-6">
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        {uniformImages.map((image) => (
+          <article
+            key={image.src}
+            className="overflow-hidden rounded-[1.8rem] border border-school.saffron/20 bg-white shadow-soft"
+          >
+            <div className="relative aspect-[4/5] bg-school.cream">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="px-5 py-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-school.red">
+                {image.label}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="rounded-[2rem] border border-school.saffron/20 bg-white px-6 py-6 shadow-soft sm:px-8">
+        <p className="text-base leading-8 text-school.gray">
+          These uniforms can be bought in any store of your preference.
+        </p>
+      </div>
+    </section>
+  );
+}
