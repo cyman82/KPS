@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Kiran Public School",
@@ -26,6 +27,7 @@ export default function RootLayout({
           </main>
           <SiteFooter />
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );
